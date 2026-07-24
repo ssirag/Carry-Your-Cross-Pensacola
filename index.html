@@ -380,6 +380,14 @@
     </form>
   </section>
 
+  <section class="copy" style="text-align:center;">
+    <div class="eyebrow">Questions?</div>
+    <h2 style="font-size:24px;">Call the organizer</h2>
+    <p style="margin-top:10px;">Jerry Nest<br>
+      <a href="tel:+16197936950" style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.04em;color:var(--gold-2);text-decoration:none;">(619) 793-6950</a>
+    </p>
+  </section>
+
   <footer>
     Carry Your Cross &middot; Saturday, August 15, 2026 &middot; 6&ndash;8 AM &middot; 301 W Main St, Pensacola, FL 32502
   </footer>
@@ -397,8 +405,15 @@
   //      - Execute as: Me
   //      - Who has access: Anyone
   // 4. Copy the deployment URL and paste it below.
+  //
+  // FORM_KEY is a basic shared-secret check, not real security —
+  // anyone who views this page's source can read it. It only stops
+  // casual/automated spam hitting the endpoint directly; it does
+  // not stop someone who deliberately reads this file. Set the same
+  // value in your Apps Script's doPost (see setup instructions).
   // ---------------------------------------------------------------
-  const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-pgnQS2XNeWxYIFRZS8KY33BYxZTsWSir8Pz00zyG6ALk_UCRT7Xv-_ww4VVA8FIB/exec";
+  const FORM_KEY = "jaDFHajprgairjglkjslkjgsegjog58398589goiaregaopeihgpoaindfjkbhzkdbnnbzhg";
 
   const form = document.getElementById('regForm');
   const statusEl = document.getElementById('formStatus');
@@ -421,7 +436,8 @@
       phone: form.phone.value.trim(),
       partySize: form.partySize.value,
       waiverAcknowledged: form.waiver.checked ? 'yes' : 'no',
-      submittedAt: new Date().toISOString()
+      submittedAt: new Date().toISOString(),
+      formKey: FORM_KEY
     };
 
     submitBtn.disabled = true;
