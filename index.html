@@ -40,23 +40,34 @@
   a{color:var(--gold-2);}
   img{display:block;max-width:100%;}
 
-  /* HERO */
-  .hero{
-    position:relative;
+  /* FIXED SCROLLING BACKGROUND */
+  .bg-fixed{
+    position:fixed;
+    inset:0;
+    background-image:
+      linear-gradient(180deg, rgba(12,12,13,0.55) 0%, rgba(12,12,13,0.55) 100%),
+      url('assets/carry-your-cross-flyer.png');
+    background-size:cover;
+    background-position:center top;
+    background-repeat:no-repeat;
+    z-index:-1;
+  }
+  .page{position:relative;}
+
+  /* HEADER */
+  .site-header{
     max-width:640px;
     margin:0 auto;
-    background:var(--ink);
-  }
-  .hero img{width:100%;height:auto;}
-  .hero-cap{
+    padding:44px 20px 24px;
     text-align:center;
-    padding:14px 20px 22px;
-    font-size:13px;
-    letter-spacing:0.12em;
-    color:var(--gold-dim);
-    text-transform:uppercase;
-    border-bottom:1px solid var(--line);
   }
+  .site-header h1{
+    font-size:44px;
+    line-height:0.95;
+    color:var(--paper);
+    text-shadow:0 2px 18px rgba(0,0,0,0.6);
+  }
+  .site-header h1 .accent{color:var(--gold);display:block;font-size:24px;letter-spacing:0.1em;margin-bottom:4px;}
 
   /* QUICK FACTS BAR */
   .factbar{
@@ -65,6 +76,8 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     border-bottom:1px solid var(--line);
+    background:rgba(12,12,13,0.72);
+    backdrop-filter:blur(2px);
   }
   .fact{
     padding:22px 20px;
@@ -98,6 +111,8 @@
     gap:10px;
     padding:18px 20px;
     border-bottom:1px solid var(--line);
+    background:rgba(12,12,13,0.72);
+    backdrop-filter:blur(2px);
   }
   .btn{
     flex:1;
@@ -128,6 +143,8 @@
     margin:0 auto;
     padding:34px 20px;
     border-bottom:1px solid var(--line);
+    background:rgba(12,12,13,0.78);
+    backdrop-filter:blur(2px);
   }
   .eyebrow{
     font-size:12px;
@@ -158,10 +175,18 @@
   }
   .pillar{flex:1;}
   .pillar .icon{
-    width:34px;height:34px;margin:0 auto 8px;
-    color:var(--gold-2);
+    height:36px;
+    margin:0 auto 8px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
   }
-  .pillar .icon svg{width:100%;height:100%;fill:none;stroke:var(--gold-2);stroke-width:1.5;}
+  .pillar .icon img{
+    height:100%;
+    width:auto;
+    max-width:100%;
+    object-fit:contain;
+  }
   .pillar .word{
     font-size:12px;
     letter-spacing:0.1em;
@@ -179,6 +204,8 @@
     max-width:640px;
     margin:0 auto;
     padding:36px 20px 50px;
+    background:rgba(12,12,13,0.82);
+    backdrop-filter:blur(2px);
   }
   section.register h2{font-size:28px;color:var(--paper);margin-bottom:6px;}
   section.register .sub{
@@ -250,6 +277,8 @@
     font-size:12px;
     color:var(--gold-dim);
     letter-spacing:0.05em;
+    background:rgba(12,12,13,0.82);
+    backdrop-filter:blur(2px);
   }
 
   @media (max-width:400px){
@@ -260,9 +289,13 @@
 </head>
 <body>
 
-  <div class="hero">
-    <img src="assets/carry-your-cross-flyer.png" alt="Carry Your Cross event flyer — a man carrying a wooden cross at sunset along the waterfront">
-  </div>
+  <div class="bg-fixed" role="img" aria-label="A man carrying a wooden cross at sunset along the waterfront"></div>
+
+  <div class="page">
+
+  <header class="site-header">
+    <h1><span class="accent">Carry It. Give It. Live It.</span>Carry Your<br>Cross</h1>
+  </header>
 
   <div class="factbar">
     <div class="fact">
@@ -288,15 +321,15 @@
 
     <div class="pillars">
       <div class="pillar">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.1C.5 8.4 2.3 5 5.8 5c2 0 3.4 1 4.2 2.3C10.8 6 12.2 5 14.2 5c3.5 0 5.3 3.4 3.8 6.9C21.5 16.4 12 21 12 21z"/><path d="M12 8v8M8.5 12h7"/></svg></div>
+        <div class="icon"><img src="assets/icon-strength.png" alt=""></div>
         <div class="word">Strength</div>
       </div>
       <div class="pillar">
-        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M6 12c1-2 3-2 4-1s1 3 2 3 1-2 2-3 3-1 4 1M8 8c1-1 2 0 2 1M14 8c1-1 2 0 2 1"/></svg></div>
+        <div class="icon"><img src="assets/icon-purpose.png" alt=""></div>
         <div class="word">Purpose</div>
       </div>
       <div class="pillar">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 18h16M5 18l-1-9 4 3 4-6 4 6 4-3-1 9"/></svg></div>
+        <div class="icon"><img src="assets/icon-faith.png" alt=""></div>
         <div class="word">Faith</div>
       </div>
     </div>
@@ -347,6 +380,8 @@
     Carry Your Cross &middot; Saturday, August 15, 2026 &middot; 301 W Main St, Pensacola, FL 32502
   </footer>
 
+  </div><!-- /.page -->
+
 <script>
   // ---------------------------------------------------------------
   // Google Sheets integration
@@ -359,7 +394,7 @@
   //      - Who has access: Anyone
   // 4. Copy the deployment URL and paste it below.
   // ---------------------------------------------------------------
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-pgnQS2XNeWxYIFRZS8KY33BYxZTsWSir8Pz00zyG6ALk_UCRT7Xv-_ww4VVA8FIB/exec";
+  const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
 
   const form = document.getElementById('regForm');
   const statusEl = document.getElementById('formStatus');
