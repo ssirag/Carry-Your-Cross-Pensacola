@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carry Your Cross — Saturday, August 15, 2026 — Pensacola, FL</title>
-<meta name="description" content="Carry Your Cross — a moderate workout circuit ending with a walk. Saturday, August 15, 2026 at 301 W Main St, Pensacola, FL. Free registration.">
+<title>Carry Your Cross — Saturday, August 15, 2026, 6-8 AM — Pensacola, FL</title>
+<meta name="description" content="Carry Your Cross — a moderate workout circuit ending with a walk. Saturday, August 15, 2026, 6-8 AM at 301 W Main St, Pensacola, FL. Free registration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -74,13 +74,13 @@
     max-width:640px;
     margin:0 auto;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
     border-bottom:1px solid var(--line);
     background:rgba(12,12,13,0.72);
     backdrop-filter:blur(2px);
   }
   .fact{
-    padding:22px 20px;
+    padding:22px 14px;
     border-right:1px solid var(--line);
   }
   .fact:last-child{border-right:none;}
@@ -93,7 +93,7 @@
   }
   .fact .value{
     font-family:'Bebas Neue',sans-serif;
-    font-size:22px;
+    font-size:19px;
     letter-spacing:0.03em;
     line-height:1.15;
     color:var(--paper);
@@ -300,11 +300,15 @@
   <div class="factbar">
     <div class="fact">
       <div class="label">Date</div>
-      <div class="value">Sat, Aug 15, 2026</div>
+      <div class="value">Sat, Aug 15</div>
+    </div>
+    <div class="fact">
+      <div class="label">Time</div>
+      <div class="value">6&ndash;8 AM</div>
     </div>
     <div class="fact">
       <div class="label">Location</div>
-      <a class="value" href="https://maps.google.com/?q=301+W+Main+St,+Pensacola,+FL+32502" target="_blank" rel="noopener">301 W Main St, Pensacola</a>
+      <a class="value" href="https://maps.google.com/?q=301+W+Main+St,+Pensacola,+FL+32502" target="_blank" rel="noopener">301 W Main St</a>
     </div>
   </div>
 
@@ -340,7 +344,7 @@
     <div class="eyebrow">Good to know</div>
     <h2>What to expect</h2>
     <p>Wear workout clothes and shoes you don't mind getting dusty. Bring water. Crosses will be on site &mdash; registration ahead of time helps us know how many to have ready.</p>
-    <p><strong>Saturday, August 15th, 2026</strong> &middot; 301 W Main St, Pensacola, FL 32502</p>
+    <p><strong>Saturday, August 15th, 2026</strong> &middot; 6&ndash;8 AM &middot; 301 W Main St, Pensacola, FL 32502</p>
   </section>
 
   <section class="register" id="register">
@@ -377,7 +381,7 @@
   </section>
 
   <footer>
-    Carry Your Cross &middot; Saturday, August 15, 2026 &middot; 301 W Main St, Pensacola, FL 32502
+    Carry Your Cross &middot; Saturday, August 15, 2026 &middot; 6&ndash;8 AM &middot; 301 W Main St, Pensacola, FL 32502
   </footer>
 
   </div><!-- /.page -->
@@ -394,7 +398,7 @@
   //      - Who has access: Anyone
   // 4. Copy the deployment URL and paste it below.
   // ---------------------------------------------------------------
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-pgnQS2XNeWxYIFRZS8KY33BYxZTsWSir8Pz00zyG6ALk_UCRT7Xv-_ww4VVA8FIB/exec";
+  const GOOGLE_SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
 
   const form = document.getElementById('regForm');
   const statusEl = document.getElementById('formStatus');
@@ -455,8 +459,8 @@
       'SUMMARY:Carry Your Cross',
       'DESCRIPTION:A moderate workout circuit ending with a .5-1 mile walk. Free registration.',
       'LOCATION:301 W Main St\\, Pensacola\\, FL 32502',
-      'DTSTART:20260815T080000',
-      'DTEND:20260815T100000',
+      'DTSTART:20260815T060000',
+      'DTEND:20260815T080000',
       'END:VEVENT',
       'END:VCALENDAR'
     ].join('\r\n');
